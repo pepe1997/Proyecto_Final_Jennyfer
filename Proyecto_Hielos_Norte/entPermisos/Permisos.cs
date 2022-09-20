@@ -17,6 +17,6 @@ namespace entPermisos
         public int idProveedores { get; set; }
         public int idInventario { get; set; }
         public int idPedido { get; set; }
-        public int idConfiguracion { get; set; }
+        public int Configuracion { get; set; }
     }
 }
