@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AccesoDatos.DaoEntidades;
 using entUsuario;
@@ -48,16 +44,16 @@ namespace SistemaProduccion_Hielos_Norte.Login
             {
 
                 List<Usuario> ouser = datUsuario.Instancia.Listar(out mensaje);
-                encontrado = ouser.Any(u => u.nombUsuario == txtusuario.Text && u.Clave == txtclave.Text);
+                encontrado = ouser.Any(u => u.NombreUsuario == txtusuario.Text && u.Clave == txtclave.Text);
 
                 if (encontrado)
                 {
-                    Usuario objuser = ouser.Where(u => u.nombUsuario == txtusuario.Text && u.Clave == txtclave.Text).FirstOrDefault();
+                    Usuario objuser = ouser.Where(u => u.NombreUsuario == txtusuario.Text && u.Clave == txtclave.Text).FirstOrDefault();
 
                     frmInicio frm = new frmInicio();
-                    frm.NombreUsuario = objuser.nickUsuario;
+                    frm.NombreUsuario = objuser.NombreUsuario;
                     frm.Clave = objuser.Clave;
-                    frm.NombreCompleto = objuser.nombUsuario;
+                    frm.NombreCompleto = objuser.NombreCompleto;
                     frm.FechaHora = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss");
                     frm.oPermisos = datPermisos.Instancia.Obtener(objuser.IdPermisos);
                     frm.Show();
@@ -77,6 +73,7 @@ namespace SistemaProduccion_Hielos_Norte.Login
 
                 }
             }
+        
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

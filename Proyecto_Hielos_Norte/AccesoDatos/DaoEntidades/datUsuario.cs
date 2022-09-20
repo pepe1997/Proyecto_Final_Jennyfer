@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccesoDatos.DataBase;
 using entUsuario;
-using Microsoft.Data.Sqlite;
+
 
 namespace AccesoDatos.DaoEntidades
 {
@@ -33,12 +34,12 @@ namespace AccesoDatos.DaoEntidades
             int respuesta = 0;
             try
             {
-                using (SqliteConnection conexion = new SqliteConnection(Conexion.cadena))
+                using (SQLiteConnection conexion = new SQLiteConnection(Conexion.cadena))
                 {
                     conexion.Open();
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("update USUARIO set NombreUsuario = 'Admin', Clave = '123' where IdUsuario = 1;");
-                    SqliteCommand cmd = new SqliteCommand(query.ToString(), conexion);
+                    SQLiteCommand cmd = new SQLiteCommand(query.ToString(), conexion);
                     cmd.CommandType = System.Data.CommandType.Text;
 
                     respuesta = cmd.ExecuteNonQuery();
@@ -60,7 +61,7 @@ namespace AccesoDatos.DaoEntidades
 
             try
             {
-                using (SqliteConnection conexion = new SqliteConnection(Conexion.cadena))
+                using (SQLiteConnection conexion = new SQLiteConnection(Conexion.cadena))
                 {
 
 
@@ -69,10 +70,10 @@ namespace AccesoDatos.DaoEntidades
                     query.AppendLine("select u.IdUsuario,u.NombreCompleto,u.NombreUsuario,u.Clave,u.IdPermisos,p.Descripcion from USUARIO u");
                     query.AppendLine("inner join PERMISOS p on p.IdPermisos = u.IdPermisos;");
 
-                    SqliteCommand cmd = new SqliteCommand(query.ToString(), conexion);
+                    SQLiteCommand cmd = new SQLiteCommand(query.ToString(), conexion);
                     cmd.CommandType = System.Data.CommandType.Text;
 
-                    using (SqliteDataReader dr = cmd.ExecuteReader())
+                    using (SQLiteDataReader dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
                         {
@@ -101,7 +102,7 @@ namespace AccesoDatos.DaoEntidades
         {
             mensaje = string.Empty;
             int respuesta = 0;
-            using (SqliteConnection conexion = new SqliteConnection(Conexion.cadena))
+            using (SQLiteConnection conexion = new SQLiteConnection(Conexion.cadena))
             {
                 try
                 {
@@ -109,9 +110,9 @@ namespace AccesoDatos.DaoEntidades
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("select count(*)[resultado] from USUARIO where upper(NombreUsuario) = upper(@pnombreusuario) and IdUsuario != @defaultid");
 
-                    SqliteCommand cmd = new SqliteCommand(query.ToString(), conexion);
-                    cmd.Parameters.Add(new SqliteParameter("@pnombreusuario", usuario));
-                    cmd.Parameters.Add(new SqliteParameter("@defaultid", defaultid));
+                    SQLiteCommand cmd = new SQLiteCommand(query.ToString(), conexion);
+                    cmd.Parameters.Add(new SQLiteParameter("@pnombreusuario", usuario));
+                    cmd.Parameters.Add(new SQLiteParameter("@defaultid", defaultid));
                     cmd.CommandType = System.Data.CommandType.Text;
 
                     respuesta = Convert.ToInt32(cmd.ExecuteScalar().ToString());
@@ -134,7 +135,7 @@ namespace AccesoDatos.DaoEntidades
             mensaje = string.Empty;
             int respuesta = 0;
 
-            using (SqliteConnection conexion = new SqliteConnection(Conexion.cadena))
+            using (SQLiteConnection conexion = new SQLiteConnection(Conexion.cadena))
             {
                 try
                 {
@@ -144,11 +145,11 @@ namespace AccesoDatos.DaoEntidades
                     query.AppendLine("insert into USUARIO(NombreCompleto,NombreUsuario,Clave,IdPermisos) values (@pnombrecompleto,@pnombreusuario,@pclave,@pidpermisos);");
                     query.AppendLine("select last_insert_rowid();");
 
-                    SqliteCommand cmd = new SqliteCommand(query.ToString(), conexion);
-                    cmd.Parameters.Add(new SqliteParameter("@pnombrecompleto", objeto.NombreCompleto));
-                    cmd.Parameters.Add(new SqliteParameter("@pnombreusuario", objeto.NombreUsuario));
-                    cmd.Parameters.Add(new SqliteParameter("@pclave", objeto.Clave));
-                    cmd.Parameters.Add(new SqliteParameter("@pidpermisos", objeto.IdPermisos));
+                    SQLiteCommand cmd = new SQLiteCommand(query.ToString(), conexion);
+                    cmd.Parameters.Add(new SQLiteParameter("@pnombrecompleto", objeto.NombreCompleto));
+                    cmd.Parameters.Add(new SQLiteParameter("@pnombreusuario", objeto.NombreUsuario));
+                    cmd.Parameters.Add(new SQLiteParameter("@pclave", objeto.Clave));
+                    cmd.Parameters.Add(new SQLiteParameter("@pidpermisos", objeto.IdPermisos));
                     cmd.CommandType = System.Data.CommandType.Text;
 
                     respuesta = Convert.ToInt32(cmd.ExecuteScalar().ToString());
@@ -170,7 +171,7 @@ namespace AccesoDatos.DaoEntidades
             mensaje = string.Empty;
             int respuesta = 0;
 
-            using (SqliteConnection conexion = new SqliteConnection(Conexion.cadena))
+            using (SQLiteConnection conexion = new SQLiteConnection(Conexion.cadena))
             {
                 try
                 {
@@ -178,12 +179,12 @@ namespace AccesoDatos.DaoEntidades
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("update USUARIO set NombreCompleto = @pnombrecompleto,NombreUsuario = @pnombreusuario,Clave = @pclave,IdPermisos = @pidpermisos  where IdUsuario = @pid");
 
-                    SqliteCommand cmd = new SqliteCommand(query.ToString(), conexion);
-                    cmd.Parameters.Add(new SqliteParameter("@pnombrecompleto", objeto.NombreCompleto));
-                    cmd.Parameters.Add(new SqliteParameter("@pnombreusuario", objeto.NombreUsuario));
-                    cmd.Parameters.Add(new SqliteParameter("@pclave", objeto.Clave));
-                    cmd.Parameters.Add(new SqliteParameter("@pidpermisos", objeto.IdPermisos));
-                    cmd.Parameters.Add(new SqliteParameter("@pid", objeto.IdUsuario));
+                    SQLiteCommand cmd = new SQLiteCommand(query.ToString(), conexion);
+                    cmd.Parameters.Add(new SQLiteParameter("@pnombrecompleto", objeto.NombreCompleto));
+                    cmd.Parameters.Add(new SQLiteParameter("@pnombreusuario", objeto.NombreUsuario));
+                    cmd.Parameters.Add(new SQLiteParameter("@pclave", objeto.Clave));
+                    cmd.Parameters.Add(new SQLiteParameter("@pidpermisos", objeto.IdPermisos));
+                    cmd.Parameters.Add(new SQLiteParameter("@pid", objeto.IdUsuario));
                     cmd.CommandType = System.Data.CommandType.Text;
 
                     respuesta = cmd.ExecuteNonQuery();
@@ -205,13 +206,13 @@ namespace AccesoDatos.DaoEntidades
             int respuesta = 0;
             try
             {
-                using (SqliteConnection conexion = new SqliteConnection(Conexion.cadena))
+                using (SQLiteConnection conexion = new SQLiteConnection(Conexion.cadena))
                 {
                     conexion.Open();
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("delete from USUARIO where IdUsuario= @id;");
-                    SqliteCommand cmd = new SqliteCommand(query.ToString(), conexion);
-                    cmd.Parameters.Add(new SqliteParameter("@id", id));
+                    SQLiteCommand cmd = new SQLiteCommand(query.ToString(), conexion);
+                    cmd.Parameters.Add(new SQLiteParameter("@id", id));
                     cmd.CommandType = System.Data.CommandType.Text;
                     respuesta = cmd.ExecuteNonQuery();
                 }

@@ -2,7 +2,7 @@
 using System.Text;
 using entPermisos;
 using AccesoDatos.DataBase;
-using Microsoft.Data.Sqlite;
+using System.Data.SQLite;
 
 namespace AccesoDatos.DaoEntidades
 {
@@ -32,15 +32,15 @@ namespace AccesoDatos.DaoEntidades
             Permisos obj = new Permisos();
             try
             {
-                using (SqliteConnection conexion = new SqliteConnection(Conexion.cadena))
+                using (SQLiteConnection conexion = new SQLiteConnection(Conexion.cadena))
                 {
                     conexion.Open();
                     string query = "select IdPermisos,Descripcion,Salidas,Entradas,Productos,Clientes,Proveedores,Inventario,Configuracion from PERMISOS where IdPermisos = @pid";
-                    SqliteCommand cmd = new SqliteCommand(query, conexion);
-                    cmd.Parameters.Add(new SqliteParameter("@pid", idpermisos));
+                    SQLiteCommand cmd = new SQLiteCommand(query, conexion);
+                    cmd.Parameters.Add(new SQLiteParameter("@pid", idpermisos));
                     cmd.CommandType = System.Data.CommandType.Text;
 
-                    using (SqliteDataReader dr = cmd.ExecuteReader())
+                    using (SQLiteDataReader dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
                         {
@@ -74,7 +74,7 @@ namespace AccesoDatos.DaoEntidades
             try
             {
 
-                using (SqliteConnection conexion = new SqliteConnection(Conexion.cadena))
+                using (SQLiteConnection conexion = new SQLiteConnection(Conexion.cadena))
                 {
 
                     conexion.Open();
@@ -89,15 +89,15 @@ namespace AccesoDatos.DaoEntidades
                     query.AppendLine("Configuracion = @pconfiguracion");
                     query.AppendLine("where IdPermisos = @pid;");
 
-                    SqliteCommand cmd = new SqliteCommand(query.ToString(), conexion);
-                    cmd.Parameters.Add(new SqliteParameter("@psalida", objeto.Salidas));
-                    cmd.Parameters.Add(new SqliteParameter("@pentrada", objeto.Entradas));
-                    cmd.Parameters.Add(new SqliteParameter("@pproducto", objeto.Productos));
-                    cmd.Parameters.Add(new SqliteParameter("@pcliente", objeto.Clientes));
-                    cmd.Parameters.Add(new SqliteParameter("@pproveedor", objeto.Proveedores));
-                    cmd.Parameters.Add(new SqliteParameter("@pinventario", objeto.Inventario));
-                    cmd.Parameters.Add(new SqliteParameter("@pconfiguracion", objeto.Configuracion));
-                    cmd.Parameters.Add(new SqliteParameter("@pid", objeto.IdPermisos));
+                    SQLiteCommand cmd = new SQLiteCommand(query.ToString(), conexion);
+                    cmd.Parameters.Add(new SQLiteParameter("@psalida", objeto.Salidas));
+                    cmd.Parameters.Add(new SQLiteParameter("@pentrada", objeto.Entradas));
+                    cmd.Parameters.Add(new SQLiteParameter("@pproducto", objeto.Productos));
+                    cmd.Parameters.Add(new SQLiteParameter("@pcliente", objeto.Clientes));
+                    cmd.Parameters.Add(new SQLiteParameter("@pproveedor", objeto.Proveedores));
+                    cmd.Parameters.Add(new SQLiteParameter("@pinventario", objeto.Inventario));
+                    cmd.Parameters.Add(new SQLiteParameter("@pconfiguracion", objeto.Configuracion));
+                    cmd.Parameters.Add(new SQLiteParameter("@pid", objeto.IdPermisos));
                     cmd.CommandType = System.Data.CommandType.Text;
 
                     respuesta = cmd.ExecuteNonQuery();
@@ -115,5 +115,6 @@ namespace AccesoDatos.DaoEntidades
 
             return respuesta;
         }
+
     }
 }
