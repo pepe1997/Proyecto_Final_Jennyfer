@@ -10,13 +10,12 @@ namespace entPermisos
     {
         public int IdPermisos { get; set; }
         public string Descripcion { get; set; }
-        public int idSalidas { get; set; }
-        public int idEntradas { get; set; }
-        public int idProductos { get; set; }
-        public int idClientes { get; set; }
-        public int idProveedores { get; set; }
-        public int idInventario { get; set; }
-        public int idPedido { get; set; }
+        public int Salidas { get; set; }
+        public int Entradas { get; set; }
+        public int Productos { get; set; }
+        public int Clientes { get; set; }
+        public int Proveedores { get; set; }
+        public int Inventario { get; set; }
         public int Configuracion { get; set; }
     }
 }

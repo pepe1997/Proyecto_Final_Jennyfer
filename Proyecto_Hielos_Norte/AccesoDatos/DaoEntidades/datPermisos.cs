@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using entPermisos;
 using AccesoDatos.DataBase;
+using Microsoft.Data.Sqlite;
 
 namespace AccesoDatos.DaoEntidades
 {
@@ -35,15 +32,15 @@ namespace AccesoDatos.DaoEntidades
             Permisos obj = new Permisos();
             try
             {
-                using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+                using (SqliteConnection conexion = new SqliteConnection(Conexion.cadena))
                 {
                     conexion.Open();
                     string query = "select IdPermisos,Descripcion,Salidas,Entradas,Productos,Clientes,Proveedores,Inventario,Configuracion from PERMISOS where IdPermisos = @pid";
-                    SqlCommand cmd = new SqlCommand(query, conexion);
-                    cmd.Parameters.Add(new SqlParameter("@pid", idpermisos));
+                    SqliteCommand cmd = new SqliteCommand(query, conexion);
+                    cmd.Parameters.Add(new SqliteParameter("@pid", idpermisos));
                     cmd.CommandType = System.Data.CommandType.Text;
 
-                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    using (SqliteDataReader dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
                         {
@@ -51,13 +48,12 @@ namespace AccesoDatos.DaoEntidades
                             {
                                 IdPermisos = int.Parse(dr["IdPermisos"].ToString()),
                                 Descripcion = dr["Descripcion"].ToString(),
-                                idSalidas = int.Parse(dr["Salidas"].ToString()),
-                                idEntradas = int.Parse(dr["Entradas"].ToString()),
-                                idProductos = int.Parse(dr["Productos"].ToString()),
-                                idClientes = int.Parse(dr["Clientes"].ToString()),
-                                idProveedores = int.Parse(dr["Proveedores"].ToString()),
-                                idInventario = int.Parse(dr["Inventario"].ToString()),
-                                idPedido = int.Parse(dr["Pedido"].ToString()),
+                                Salidas = int.Parse(dr["Salidas"].ToString()),
+                                Entradas = int.Parse(dr["Entradas"].ToString()),
+                                Productos = int.Parse(dr["Productos"].ToString()),
+                                Clientes = int.Parse(dr["Clientes"].ToString()),
+                                Proveedores = int.Parse(dr["Proveedores"].ToString()),
+                                Inventario = int.Parse(dr["Inventario"].ToString()),
                                 Configuracion = int.Parse(dr["Configuracion"].ToString())
                             };
                         }
@@ -78,7 +74,7 @@ namespace AccesoDatos.DaoEntidades
             try
             {
 
-                using (SqlConnection conexion = new SqlConnection(Conexion.cadena))
+                using (SqliteConnection conexion = new SqliteConnection(Conexion.cadena))
                 {
 
                     conexion.Open();
@@ -93,16 +89,15 @@ namespace AccesoDatos.DaoEntidades
                     query.AppendLine("Configuracion = @pconfiguracion");
                     query.AppendLine("where IdPermisos = @pid;");
 
-                    SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
-                    cmd.Parameters.Add(new SqlParameter("@psalida", objeto.idSalidas));
-                    cmd.Parameters.Add(new SqlParameter("@pentrada", objeto.idEntradas));
-                    cmd.Parameters.Add(new SqlParameter("@pproducto", objeto.idProductos));
-                    cmd.Parameters.Add(new SqlParameter("@pcliente", objeto.idClientes));
-                    cmd.Parameters.Add(new SqlParameter("@pproveedor", objeto.idProveedores));
-                    cmd.Parameters.Add(new SqlParameter("@pinventario", objeto.idInventario));
-                    cmd.Parameters.Add(new SqlParameter("@pedido", objeto.idPedido));
-                    cmd.Parameters.Add(new SqlParameter("@pconfiguracion", objeto.Configuracion));
-                    cmd.Parameters.Add(new SqlParameter("@pid", objeto.IdPermisos));
+                    SqliteCommand cmd = new SqliteCommand(query.ToString(), conexion);
+                    cmd.Parameters.Add(new SqliteParameter("@psalida", objeto.Salidas));
+                    cmd.Parameters.Add(new SqliteParameter("@pentrada", objeto.Entradas));
+                    cmd.Parameters.Add(new SqliteParameter("@pproducto", objeto.Productos));
+                    cmd.Parameters.Add(new SqliteParameter("@pcliente", objeto.Clientes));
+                    cmd.Parameters.Add(new SqliteParameter("@pproveedor", objeto.Proveedores));
+                    cmd.Parameters.Add(new SqliteParameter("@pinventario", objeto.Inventario));
+                    cmd.Parameters.Add(new SqliteParameter("@pconfiguracion", objeto.Configuracion));
+                    cmd.Parameters.Add(new SqliteParameter("@pid", objeto.IdPermisos));
                     cmd.CommandType = System.Data.CommandType.Text;
 
                     respuesta = cmd.ExecuteNonQuery();
