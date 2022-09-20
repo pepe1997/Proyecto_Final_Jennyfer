@@ -119,7 +119,7 @@ namespace SistemaProduccion_Hielos_Norte.Login
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(410, 263);
+            this.label1.Size = new System.Drawing.Size(428, 263);
             this.label1.TabIndex = 56;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -137,7 +137,7 @@ namespace SistemaProduccion_Hielos_Norte.Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 579);
+            this.ClientSize = new System.Drawing.Size(428, 579);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
