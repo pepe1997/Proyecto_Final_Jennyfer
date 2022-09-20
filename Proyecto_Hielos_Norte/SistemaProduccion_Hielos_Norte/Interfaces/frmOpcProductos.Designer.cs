@@ -1,7 +1,7 @@
 ﻿
-namespace SistemaProduccion_Hielos_Norte.Interfaces
+namespace SistemaProduccion_Hielos_Norte
 {
-    partial class frmInicio
+    partial class frmOpcProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,34 +29,20 @@ namespace SistemaProduccion_Hielos_Norte.Interfaces
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnProducto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnProducto
-            // 
-            this.btnProducto.Location = new System.Drawing.Point(63, 42);
-            this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(75, 23);
-            this.btnProducto.TabIndex = 0;
-            this.btnProducto.Text = "Productos";
-            this.btnProducto.UseVisualStyleBackColor = true;
-            this.btnProducto.Click += new System.EventHandler(this.btnProducto_Click);
-            // 
-            // frmInicio
+            // frmOpcProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnProducto);
-            this.Name = "frmInicio";
-            this.Text = "frmInicio";
-            this.Load += new System.EventHandler(this.frmInicio_Load);
+            this.Name = "frmOpcProductos";
+            this.Text = "frmOpcProductos";
+            this.Load += new System.EventHandler(this.frmOpcProductos_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnProducto;
     }
 }

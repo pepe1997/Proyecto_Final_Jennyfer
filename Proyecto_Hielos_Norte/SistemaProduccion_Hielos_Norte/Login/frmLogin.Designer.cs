@@ -1,7 +1,7 @@
 ﻿
 namespace SistemaProduccion_Hielos_Norte.Login
 {
-    partial class frmLogin
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -48,7 +48,7 @@ namespace SistemaProduccion_Hielos_Norte.Login
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 20);
-            this.label3.TabIndex = 54;
+            this.label3.TabIndex = 57;
             this.label3.Text = "Contraseña:";
             // 
             // label2
@@ -59,7 +59,7 @@ namespace SistemaProduccion_Hielos_Norte.Login
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 20);
-            this.label2.TabIndex = 55;
+            this.label2.TabIndex = 58;
             this.label2.Text = "Usuario:";
             // 
             // btnSalir
@@ -73,7 +73,7 @@ namespace SistemaProduccion_Hielos_Norte.Login
             this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(143, 39);
-            this.btnSalir.TabIndex = 60;
+            this.btnSalir.TabIndex = 63;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -89,7 +89,7 @@ namespace SistemaProduccion_Hielos_Norte.Login
             this.btningresar.Margin = new System.Windows.Forms.Padding(4);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(143, 39);
-            this.btningresar.TabIndex = 59;
+            this.btningresar.TabIndex = 62;
             this.btningresar.Text = "Ingresar";
             this.btningresar.UseVisualStyleBackColor = false;
             this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
@@ -102,7 +102,7 @@ namespace SistemaProduccion_Hielos_Norte.Login
             this.txtclave.Name = "txtclave";
             this.txtclave.PasswordChar = '*';
             this.txtclave.Size = new System.Drawing.Size(325, 26);
-            this.txtclave.TabIndex = 58;
+            this.txtclave.TabIndex = 61;
             // 
             // txtusuario
             // 
@@ -111,7 +111,7 @@ namespace SistemaProduccion_Hielos_Norte.Login
             this.txtusuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(325, 26);
-            this.txtusuario.TabIndex = 57;
+            this.txtusuario.TabIndex = 60;
             // 
             // label1
             // 
@@ -120,28 +120,25 @@ namespace SistemaProduccion_Hielos_Norte.Login
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(436, 263);
-            this.label1.TabIndex = 56;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Size = new System.Drawing.Size(436, 249);
+            this.label1.TabIndex = 59;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Teal;
             this.pictureBox1.Image = global::SistemaProduccion_Hielos_Norte.Properties.Resources.R;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 80);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(80, 68);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(260, 93);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 62;
+            this.pictureBox1.TabIndex = 64;
             this.pictureBox1.TabStop = false;
             // 
-            // frmLogin
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(436, 620);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
@@ -152,11 +149,13 @@ namespace SistemaProduccion_Hielos_Norte.Login
             this.Controls.Add(this.txtclave);
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximumSize = new System.Drawing.Size(454, 667);
             this.MinimumSize = new System.Drawing.Size(454, 667);
-            this.Name = "frmLogin";
-            this.Text = "frmLogin";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
+            this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FrmLogin";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -164,7 +163,6 @@ namespace SistemaProduccion_Hielos_Norte.Login
         }
 
         #endregion
-
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSalir;

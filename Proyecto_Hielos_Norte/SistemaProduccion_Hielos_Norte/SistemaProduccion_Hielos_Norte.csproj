@@ -139,25 +139,44 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Herramientas\OpcionCombo.cs" />
+    <Compile Include="Interfaces\frmOpcProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\frmOpcProductos.Designer.cs">
+      <DependentUpon>frmOpcProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaces\frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\frmLogin.cs">
+    <Compile Include="Interfaces\FrmRegistrarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login\frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="Interfaces\FrmRegistrarProductos.Designer.cs">
+      <DependentUpon>FrmRegistrarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Interfaces\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login\frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\frmOpcProductos.resx">
+      <DependentUpon>frmOpcProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\FrmRegistrarProductos.resx">
+      <DependentUpon>FrmRegistrarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -197,6 +216,10 @@
     <ProjectReference Include="..\entPermisos\entPermisos.csproj">
       <Project>{14f0e6c6-8fd3-44e5-82b8-95a480a9b54f}</Project>
       <Name>entPermisos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entProducto\entProducto.csproj">
+      <Project>{4ed6297f-2dfb-4fe9-ad0e-e35879f6b316}</Project>
+      <Name>entProducto</Name>
     </ProjectReference>
     <ProjectReference Include="..\entUsuario\entUsuario.csproj">
       <Project>{98bac72e-ffc2-4ad5-9eef-c756cf50c97b}</Project>

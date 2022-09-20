@@ -16,7 +16,7 @@ namespace SistemaProduccion_Hielos_Norte
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new FrmLogin());
         }
     }
 }

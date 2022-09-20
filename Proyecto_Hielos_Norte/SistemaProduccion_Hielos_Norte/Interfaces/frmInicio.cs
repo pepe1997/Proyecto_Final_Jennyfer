@@ -27,5 +27,26 @@ namespace SistemaProduccion_Hielos_Norte.Interfaces
         {
 
         }
+        private void Frm_Closing(object sender, FormClosingEventArgs e)
+        {
+            this.Show();
+        }
+        private void btnProducto_Click(object sender, EventArgs e)
+        {
+            using (var Iform = new frmOpcProductos())
+            {
+
+                Iform.BackColor = Color.Teal;
+                var result = Iform.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    Form FormularioVista = Iform.FormularioVista;
+                    this.Hide();
+                    FormularioVista.Show();
+                    FormularioVista.FormClosing += Frm_Closing;
+                }
+            }
+        }
+       
     }
 }

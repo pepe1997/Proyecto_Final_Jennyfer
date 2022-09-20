@@ -176,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DaoEntidades\datPermisos.cs" />
+    <Compile Include="DaoEntidades\datProductos.cs" />
     <Compile Include="DaoEntidades\datUsuario.cs" />
     <Compile Include="DataBase\Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,6 +190,10 @@
     <ProjectReference Include="..\entPermisos\entPermisos.csproj">
       <Project>{14f0e6c6-8fd3-44e5-82b8-95a480a9b54f}</Project>
       <Name>entPermisos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\entProducto\entProducto.csproj">
+      <Project>{4ed6297f-2dfb-4fe9-ad0e-e35879f6b316}</Project>
+      <Name>entProducto</Name>
     </ProjectReference>
     <ProjectReference Include="..\entUsuario\entUsuario.csproj">
       <Project>{98bac72e-ffc2-4ad5-9eef-c756cf50c97b}</Project>

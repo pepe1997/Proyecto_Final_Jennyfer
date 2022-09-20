@@ -1,30 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using AccesoDatos.DaoEntidades;
 using entUsuario;
 using SistemaProduccion_Hielos_Norte.Interfaces;
 
-
 namespace SistemaProduccion_Hielos_Norte.Login
 {
-    public partial class frmLogin : Form
+    public partial class FrmLogin : Form
     {
-        public frmLogin()
+        public FrmLogin()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void Frm_Closing(object sender, FormClosingEventArgs e)
         {
-
+            txtusuario.Text = "";
+            txtclave.Text = "";
+            this.Show();
+            txtusuario.Focus();
         }
 
         private void btningresar_Click(object sender, EventArgs e)
@@ -58,7 +69,7 @@ namespace SistemaProduccion_Hielos_Norte.Login
                     frm.oPermisos = datPermisos.Instancia.Obtener(objuser.IdPermisos);
                     frm.Show();
                     this.Hide();
-                    frm.FormClosing += frmLogin_FormClosing;
+                    frm.FormClosing += Frm_Closing;
                 }
                 else
                 {
@@ -73,20 +84,6 @@ namespace SistemaProduccion_Hielos_Norte.Login
 
                 }
             }
-        
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            txtusuario.Text = "";
-            txtclave.Text = "";
-            this.Show();
-            txtusuario.Focus();
         }
     }
 }

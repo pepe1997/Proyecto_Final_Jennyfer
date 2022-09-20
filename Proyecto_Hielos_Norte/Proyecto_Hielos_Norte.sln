@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "entUsuario", "entUsuario\en
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "entPermisos", "entPermisos\entPermisos.csproj", "{14F0E6C6-8FD3-44E5-82B8-95A480A9B54F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "entProducto", "entProducto\entProducto.csproj", "{4ED6297F-2DFB-4FE9-AD0E-E35879F6B316}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{14F0E6C6-8FD3-44E5-82B8-95A480A9B54F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14F0E6C6-8FD3-44E5-82B8-95A480A9B54F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14F0E6C6-8FD3-44E5-82B8-95A480A9B54F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ED6297F-2DFB-4FE9-AD0E-E35879F6B316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ED6297F-2DFB-4FE9-AD0E-E35879F6B316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ED6297F-2DFB-4FE9-AD0E-E35879F6B316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ED6297F-2DFB-4FE9-AD0E-E35879F6B316}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{AF74B9A2-0DC1-4884-8EDD-6EDD52777C68} = {420E99B0-27AF-4046-85A2-D9EF159C9F91}
 		{98BAC72E-FFC2-4AD5-9EEF-C756CF50C97B} = {A1192112-4418-4CA0-874B-4F9234646199}
 		{14F0E6C6-8FD3-44E5-82B8-95A480A9B54F} = {A1192112-4418-4CA0-874B-4F9234646199}
+		{4ED6297F-2DFB-4FE9-AD0E-E35879F6B316} = {A1192112-4418-4CA0-874B-4F9234646199}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {505ED502-7DCA-4522-BBE5-4148F20B0596}
