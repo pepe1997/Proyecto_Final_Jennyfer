@@ -76,6 +76,7 @@ namespace SistemaProduccion_Hielos_Norte.Login
             this.btnSalir.TabIndex = 60;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btningresar
             // 
@@ -119,7 +120,7 @@ namespace SistemaProduccion_Hielos_Norte.Login
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(428, 263);
+            this.label1.Size = new System.Drawing.Size(436, 263);
             this.label1.TabIndex = 56;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -127,9 +128,11 @@ namespace SistemaProduccion_Hielos_Norte.Login
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Teal;
             this.pictureBox1.Image = global::SistemaProduccion_Hielos_Norte.Properties.Resources.R;
-            this.pictureBox1.Location = new System.Drawing.Point(74, 61);
+            this.pictureBox1.Location = new System.Drawing.Point(56, 80);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(266, 113);
+            this.pictureBox1.Size = new System.Drawing.Size(260, 93);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 62;
             this.pictureBox1.TabStop = false;
             // 
@@ -137,7 +140,10 @@ namespace SistemaProduccion_Hielos_Norte.Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 579);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CausesValidation = false;
+            this.ClientSize = new System.Drawing.Size(436, 620);
+            this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -146,8 +152,11 @@ namespace SistemaProduccion_Hielos_Norte.Login
             this.Controls.Add(this.txtclave);
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(454, 667);
+            this.MinimumSize = new System.Drawing.Size(454, 667);
             this.Name = "frmLogin";
             this.Text = "frmLogin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

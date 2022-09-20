@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Permisos
 {
-    class Permisos
+    public class Permisos
     {
         public int IdPermisos { get; set; }
         public string Descripcion { get; set; }

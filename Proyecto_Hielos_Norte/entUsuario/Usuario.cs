@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Usuario
+namespace entUsuario
 {
     public class Usuario
     {
@@ -14,6 +14,5 @@ namespace Usuario
         public string Clave { get; set; }
         public string Descripcion { get; set; }
         public int IdPermisos { get; set; }
-        
     }
 }
