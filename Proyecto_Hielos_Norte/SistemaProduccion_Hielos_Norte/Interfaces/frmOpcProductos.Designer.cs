@@ -29,13 +29,25 @@ namespace SistemaProduccion_Hielos_Norte
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnRegistrarProducto = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // btnRegistrarProducto
+            // 
+            this.btnRegistrarProducto.Location = new System.Drawing.Point(154, 90);
+            this.btnRegistrarProducto.Name = "btnRegistrarProducto";
+            this.btnRegistrarProducto.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrarProducto.TabIndex = 0;
+            this.btnRegistrarProducto.Text = "Registar";
+            this.btnRegistrarProducto.UseVisualStyleBackColor = true;
+            this.btnRegistrarProducto.Click += new System.EventHandler(this.btnRegistrarProducto_Click);
             // 
             // frmOpcProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRegistrarProducto);
             this.Name = "frmOpcProductos";
             this.Text = "frmOpcProductos";
             this.Load += new System.EventHandler(this.frmOpcProductos_Load);
@@ -44,5 +56,7 @@ namespace SistemaProduccion_Hielos_Norte
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnRegistrarProducto;
     }
 }

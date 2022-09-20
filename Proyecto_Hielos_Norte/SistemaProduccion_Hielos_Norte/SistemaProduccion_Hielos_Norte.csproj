@@ -166,6 +166,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\delete32.png" />
+    <None Include="Resources\delete17.png" />
+    <None Include="Resources\check20.png" />
+    <None Include="Resources\383148-16.png" />
+    <None Include="Resources\check16.png" />
     <EmbeddedResource Include="Interfaces\frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>

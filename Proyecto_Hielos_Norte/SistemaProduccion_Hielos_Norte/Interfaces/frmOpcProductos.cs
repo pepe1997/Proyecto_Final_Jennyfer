@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaProduccion_Hielos_Norte.Interfaces;
 
 namespace SistemaProduccion_Hielos_Norte
 {
@@ -21,6 +22,14 @@ namespace SistemaProduccion_Hielos_Norte
         private void frmOpcProductos_Load(object sender, EventArgs e)
         {
 
+        }
+       
+
+        private void btnRegistrarProducto_Click(object sender, EventArgs e)
+        {
+            FormularioVista = new FrmRegistrarProductos();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

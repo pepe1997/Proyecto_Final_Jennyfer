@@ -244,27 +244,21 @@ namespace SistemaProduccion_Hielos_Norte.Interfaces
 
         private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
+
+            if (e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == 1)
             {
-                if (dgvdata.Columns[e.ColumnIndex].Name == "btnseleccionar")
-                {
-                    dgvdata.Rows[_indice].DefaultCellStyle.BackColor = Color.White;
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                    _id = Convert.ToInt32(dgvdata.Rows[index].Cells["Id"].Value.ToString());
-                    _indice = index;
-                    txtcodigo.Text = dgvdata.Rows[index].Cells["Codigo"].Value.ToString();
-                    txtdescripcion.Text = dgvdata.Rows[index].Cells["Descripcion"].Value.ToString();
-                    txtcategoria.Text = dgvdata.Rows[index].Cells["Categoria"].Value.ToString();
-                    txtalmacen.Text = dgvdata.Rows[index].Cells["Almacen"].Value.ToString();
+                var w = Properties.Resources.check16.Width;
+                var h = Properties.Resources.check16.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
-                    txtcodigo.BackColor = Color.LemonChiffon;
-                    txtdescripcion.BackColor = Color.LemonChiffon;
-                    txtcategoria.BackColor = Color.LemonChiffon;
-                    txtalmacen.BackColor = Color.LemonChiffon;
-                    dgvdata.Rows[index].DefaultCellStyle.BackColor = Color.LemonChiffon;
-                }
-
+                e.Graphics.DrawImage(Properties.Resources.check16, new Rectangle(x, y, w, h));
+                e.Handled = true;
             }
         }
 
